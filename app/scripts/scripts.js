@@ -10,7 +10,7 @@ $(document).ready(function() {
 	};
 
 
-	var addTask = function (task) {
+	var addTask = function(task) {
 		if (task) {
 			task = new Task(task);
 		 	listo.push(task);
@@ -30,7 +30,7 @@ $(document).ready(function() {
 	};
 
 
-	var advanceTask = function (task) {
+	var advanceTask = function(task) {
 		 var modified = task.innerText.trim();
 		 for (var i = 0; i < listo.length; i++) {
 		 	if (listo[i].task === modified) {
@@ -79,6 +79,14 @@ $(document).ready(function() {
 		this.id = 'inProgress';
 		$('#currentList').append(this.outerHTML);
 	});
+	// this one doesn't work. Craig is going to tell me why
+	// $('#item').click(function(e) {
+	// 	e.preventDefault();
+	// 	var task = this;
+	// 	advanceTask(task);
+	// 	this.id = 'inProgress';
+	// 	$('#currentList').append(this.outerHTML);
+	// });
 
 	// change from inProgress to archived
 	$(document).on('click','#inProgress',function(e) {
